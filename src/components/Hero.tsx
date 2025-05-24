@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Hero: React.FC = () => {
           <img 
             src="/dot-logo.png" 
             alt="DOT Logo" 
-            className="h-48 md:h-64 lg:h-80 xl:h-96 animate-bounce-in transform hover:scale-105 transition-transform duration-300" 
+            className="h-48 md:h-64 lg:h-80 xl:h-96 animate-scale-up-return transform hover:scale-105 transition-transform duration-300" 
           />
         </div>
         
@@ -26,7 +27,7 @@ const Hero: React.FC = () => {
         </h1>
         
         <div className="flex justify-center px-8 md:px-16 lg:px-24">
-          <p className="text-lg md:text-xl lg:text-2xl max-w-6xl text-left text-white/80 leading-relaxed font-inter tracking-wide space-y-4">
+          <p className="text-lg md:text-xl lg:text-2xl max-w-6xl text-left text-foreground/80 leading-relaxed font-inter tracking-wide space-y-4">
             <span className="font-semibold">Developers Of Tomorrow (D.O.T)</span> is a student-led community of Data Science @ PESCE, Mandya 
             driven by curiosity, collaboration, and code. Whether you're just starting out or ready to 
             level up, join us for hands-on workshops, cutting-edge hackathons, and peer projects that 
@@ -34,16 +35,12 @@ const Hero: React.FC = () => {
           </p>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-20">
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-dot-cyan to-dot text-white hover:opacity-90 transition-opacity animate-bounce-in"
-          >
-            Learn More
-            <ArrowRight size={18} className="ml-2" />
-          </Button>
+        <div className="mt-8 animate-fade-in" style={{ animationDelay: '500ms' }}>
+          <Link to="/auth?mode=register">
+            <Button size="lg" className="text-lg px-8 py-6">Join Now</Button>
+          </Link>
         </div>
-        
+
         <div className="mt-16 animate-bounce">
           <a href="#team" className="inline-block">
             <div className="w-8 h-12 border-2 border-white/30 rounded-full flex items-start justify-center">

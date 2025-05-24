@@ -19,6 +19,7 @@ interface TeamMember {
   };
 }
 
+
 // Club Heads data
 const clubHeads: TeamMember[] = [
   {
@@ -30,12 +31,12 @@ const clubHeads: TeamMember[] = [
     skills: [
       { name: 'Leadership', level: 95 },
       { name: 'Strategy', level: 90 },
-      { name: 'Communication', level: 92 }
+      { name: 'Communication', level: 92 },
     ],
     social: {
-      linkedin: 'https://www.linkedin.com/in/shivam-verma-98b910283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-      github: '#'
-    }
+      linkedin: 'https://www.linkedin.com/in/shivam-verma-98b910283',
+      github: '#',
+    },
   },
   {
     id: 2,
@@ -46,12 +47,12 @@ const clubHeads: TeamMember[] = [
     skills: [
       { name: 'Management', level: 90 },
       { name: 'Team Building', level: 88 },
-      { name: 'Project Planning', level: 85 }
+      { name: 'Project Planning', level: 85 },
     ],
     social: {
-      linkedin: 'https://www.linkedin.com/in/alok-singh-261149295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-      github: '#'
-    }
+      linkedin: 'https://www.linkedin.com/in/alok-singh-261149295',
+      github: '#',
+    },
   },
   {
     id: 3,
@@ -62,14 +63,31 @@ const clubHeads: TeamMember[] = [
     skills: [
       { name: 'Organization', level: 92 },
       { name: 'Documentation', level: 88 },
-      { name: 'Communication', level: 90 }
+      { name: 'Communication', level: 90 },
     ],
     social: {
-      linkedin: 'www.linkedin.com/in/07raghavan',
-      github: 'https://github.com/07raghavan'
+      linkedin: 'http://www.linkedin.com/in/07raghavan',
+      github: 'https://github.com/07raghavan',
+    },
+  },
+  {
+    id: 9,
+    name: 'Sanitha BM',
+    role: 'Teasurer',
+    bio: 'Leading and managing team operations.',
+    image: '/shanitha.jpg',
+    skills: [
+      { name: 'Leadership', level: 92 },
+      { name: 'Team Management', level: 90 },
+      { name: 'Strategic Planning', level: 88 }
+    ],
+    social: {
+      linkedin: 'https://www.linkedin.com/in/sanitha-b-m-5658b130a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
     }
-  }
+  },
+  
 ];
+
 
 // Club Leads data
 const clubLeads: TeamMember[] = [
@@ -108,7 +126,7 @@ const clubLeads: TeamMember[] = [
     name: 'Shanwi BM',
     role: 'Technical Team Lead',
     bio: 'Driving technical projects and development initiatives.',
-    image: '/shanwi.jpg',
+    image: '/shanwi.jpeg',
     skills: [
       { name: 'Development', level: 95 },
       { name: 'Architecture', level: 88 },
@@ -123,7 +141,7 @@ const clubLeads: TeamMember[] = [
     name: 'Disha Shetty',
     role: 'Outreach Team Lead',
     bio: 'Managing external relations and partnerships.',
-    image: '/disha.jpg',
+    image: '/disha.jpeg',
     skills: [
       { name: 'Networking', level: 90 },
       { name: 'Communication', level: 92 },
@@ -146,21 +164,6 @@ const clubLeads: TeamMember[] = [
     ],
     social: {
       linkedin: 'https://www.linkedin.com/in/mohammed-ayaan-066a2426a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
-    }
-  },
-  {
-    id: 9,
-    name: 'Sanitha BM',
-    role: 'Treasurer',
-    bio: 'Managing club finances and budgeting.',
-    image: '/shanitha.jpg',
-    skills: [
-      { name: 'Financial Planning', level: 90 },
-      { name: 'Budgeting', level: 92 },
-      { name: 'Record Keeping', level: 88 }
-    ],
-    social: {
-      linkedin: 'https://www.linkedin.com/in/sanitha-b-m-5658b130a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
     }
   }
 ];

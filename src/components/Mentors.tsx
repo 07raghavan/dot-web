@@ -12,7 +12,7 @@ const mentors: Mentor[] = [
     id: 1,
     name: "Dr. Anitha ML",
     role: "Club Mentor",
-    image: '/hod.jpg'
+    image: '/hod.jpeg'
   },
   {
     id: 2,

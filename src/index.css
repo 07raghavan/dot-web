@@ -67,6 +67,10 @@
     --input: 0 0% 10%;
     --ring: 0 0% 100%;
   }
+
+  #team {
+    scroll-padding-top: 150px; /* Further adjusted value for fixed header */
+  }
 }
 
 @layer base {
@@ -112,4 +116,8 @@
   .text-gradient {
     @apply text-transparent bg-clip-text bg-hero-gradient;
   }
+}
+
+.file-content {
+  color: inherit;
 }

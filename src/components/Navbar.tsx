@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { supabase } from '@/lib/supabaseClient';
 
 interface NavItem {
   label: string;
@@ -14,7 +16,9 @@ const navItems: NavItem[] = [
   { label: 'About', href: '/about' },
   { label: 'Mentors', href: '/mentors' },
   { label: 'Team', href: '/team' },
+  { label: 'Members', href: '/members' },
   { label: 'Events', href: '/events' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' }
 ];
 
@@ -23,6 +27,7 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
+  const { user } = useAuth();
 
   // Initialize theme
   useEffect(() => {
@@ -87,7 +92,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -121,6 +126,36 @@ const Navbar: React.FC = () => {
               </button>
               <Moon size={20} className="text-gray-800 dark:text-gray-200" />
             </div>
+
+            {/* Conditional Auth Buttons */}
+            {user ? (
+              <div className="relative group">
+                <Link to="/profile">
+                  <Button variant="outline" className="flex items-center gap-2">
+                    Profile <ChevronDown className="w-4 h-4" />
+                  </Button>
+                </Link>
+                <div className="absolute left-0 w-full mt-2 hidden group-hover:block z-50">
+                  <Button
+                    variant="destructive"
+                    className="w-full rounded-t-none"
+                    onClick={async () => { await supabase.auth.signOut(); }}
+                  >
+                    Logout
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <Link to="/auth">
+                  <Button variant="outline">Login</Button>
+                </Link>
+                <Link to="/auth?mode=register">
+                  <Button>Join Now</Button>
+                </Link>
+              </>
+            )}
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -170,6 +205,34 @@ const Navbar: React.FC = () => {
                 </button>
                 <Moon size={20} className="text-gray-800 dark:text-gray-200" />
               </div>
+              {/* Conditional Auth Buttons for Mobile */}
+              {user ? (
+                <div className="relative group">
+                  <Link to="/profile" onClick={toggleMobileMenu}>
+                    <Button variant="outline" className="flex items-center gap-2">
+                      Profile <ChevronDown className="w-4 h-4" />
+                    </Button>
+                  </Link>
+                  <div className="absolute left-0 w-full mt-2 hidden group-hover:block z-50">
+                    <Button
+                      variant="destructive"
+                      className="w-full rounded-t-none"
+                      onClick={async () => { await supabase.auth.signOut(); }}
+                    >
+                      Logout
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col space-y-2">
+                  <Link to="/auth" onClick={toggleMobileMenu}>
+                    <Button variant="outline" className="w-full">Login</Button>
+                  </Link>
+                  <Link to="/auth?mode=register" onClick={toggleMobileMenu}>
+                    <Button className="w-full">Join Now</Button>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         )}

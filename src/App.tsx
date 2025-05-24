@@ -7,6 +7,11 @@ import EventsPage from '@/pages/EventsPage';
 import AboutPage from '@/pages/AboutPage';
 import ContactPage from '@/pages/ContactPage';
 import TeamDetailsPage from '@/pages/TeamDetailsPage';
+import AuthForm from '@/components/Auth/AuthForm';
+import ProfilePage from '@/pages/ProfilePage';
+import MembersPage from '@/pages/MembersPage';
+import BlogPage from '@/pages/BlogPage';
+// import BlogPage from '@/pages/BlogPage';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +24,11 @@ const App: React.FC = () => {
         <Route path="/mentors" element={<MentorsPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/auth" element={<AuthForm />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/members" element={<MembersPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        {/* <Route path="/blog" element={<BlogPage />} /> */}
       </Routes>
     </Router>
   );
