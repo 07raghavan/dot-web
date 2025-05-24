@@ -1,6 +1,6 @@
 # Developers Of Tomorrow (DOT)
 
-A modern web platform for the CSE Data Science Department's student community. This platform facilitates learning, collaboration, and growth through workshops, events, and peer projects.
+A modern web platform for the CSE Data Science Department's student community.
 
 ## Features
 
